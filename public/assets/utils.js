@@ -1,5 +1,5 @@
 
-export function geListBykey(key){
+export function getListBykey(key){
     let list=[];
     const listFromLocal=JSON.parse(localStorage.getItem(key));
     if(listFromLocal){
@@ -11,7 +11,7 @@ export function geListBykey(key){
 
 export function setListBykey(key,val){
     let list=[val];
-    const listFromLocal=geListBykey(key);
+    const listFromLocal=getListBykey(key);
     if(listFromLocal){
         list=[...list,...listFromLocal];
     }

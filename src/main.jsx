@@ -9,6 +9,7 @@ import NotFound from "./components/NotFound";
 import Root from "./components/Root";
 import Home from "./components/Home";
 import BookDetail from "./components/BookDetail";
+import ListedBooks from "./components/ListedBooks";
 
 const router = createBrowserRouter([
   {
@@ -28,8 +29,8 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/listed",
-        element: <BookDetail></BookDetail> ,
+        path: "/listedBooks",
+        element: <ListedBooks></ListedBooks> ,
       },
       
     ],

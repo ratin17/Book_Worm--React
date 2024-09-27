@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-
+import {Link} from 'react-router-dom';
 // import React from 'react';
 
 import { CiStar } from "react-icons/ci";
@@ -13,7 +13,9 @@ const Book = ({book}) => {
         <div className=" border rounded-3xl p-5 flex flex-col justify-normal gap-5 " >
 
             <div className={`${id === 8 ? 'px-10 py-2' : 'px-20 py-4'} bg-gray-300 rounded-xl`} >
-                <img src={image} alt={name} className={`w-full ${id===8 ? 'h-52' : 'h-44'} `} />
+                <Link to={`/book/${id}`} >
+                    <img src={image} alt={name} className={`w-full ${id===8 ? 'h-52' : 'h-44'} `} />
+                </Link>
             </div>
 
             <div className=" flex gap-2 items-center">
@@ -24,7 +26,9 @@ const Book = ({book}) => {
                 }
             </div>
 
-            <h2 className="text-xl font-bold">{name}</h2>
+            <Link to={`/book/${id}`} >
+                <h2 className="text-xl font-bold">{name}</h2>
+            </Link>
             
             <p className=" text-base flex-grow " >By : {author}</p>
 

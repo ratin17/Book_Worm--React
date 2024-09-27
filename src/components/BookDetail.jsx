@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams} from 'react-router-dom';
 import { BookContext } from './Root';
-import { geListBykey, setListBykey } from '../../public/assets/utils';
+import { getListBykey, setListBykey } from '../../public/assets/utils';
 
 const BookDetail = () => {
     const {books,showToast}=React.useContext(BookContext);
@@ -20,7 +20,7 @@ const BookDetail = () => {
 
     function handleRead(id){
         
-        const readBookIds=geListBykey('readlist');
+        const readBookIds=getListBykey('readlist');
         if(readBookIds.includes(id)){
             showToast('You have already read this book !');
         }
@@ -32,8 +32,8 @@ const BookDetail = () => {
 
     function handleWishlist(id){
         
-        const readBookIds=geListBykey('readlist');
-        const wishlistBookIds=geListBykey('wishlist');
+        const readBookIds=getListBykey('readlist');
+        const wishlistBookIds=getListBykey('wishlist');
 
         if(readBookIds.includes(id)){
             showToast("You have already read this book , Can't add to Wishlist");
