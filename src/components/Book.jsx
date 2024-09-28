@@ -10,12 +10,11 @@ const Book = ({book}) => {
     // console.log(name)
 
     return (
-        <div className=" border rounded-3xl p-5 flex flex-col justify-normal gap-5 " >
 
-            <div className={`${id === 8 ? 'px-10 py-2' : 'px-20 py-4'} bg-gray-300 rounded-xl`} >
-                <Link to={`/book/${id}`} >
-                    <img src={image} alt={name} className={`w-full ${id===8 ? 'h-52' : 'h-44'} `} />
-                </Link>
+        <Link to={`/book/${id}`} className=" border rounded-3xl p-5 flex flex-col gap-5 " >
+
+            <div className=" px-20 py-4 bg-gray-300 rounded-xl" > 
+                <img src={image} alt={name} className="w-full h-44 " />
             </div>
 
             <div className=" flex gap-2 items-center">
@@ -26,9 +25,7 @@ const Book = ({book}) => {
                 }
             </div>
 
-            <Link to={`/book/${id}`} >
-                <h2 className="text-xl font-bold">{name}</h2>
-            </Link>
+            <h2 className="text-xl font-bold">{name}</h2>
             
             <p className=" text-base flex-grow " >By : {author}</p>
 
@@ -38,11 +35,9 @@ const Book = ({book}) => {
                     <p>{rating}</p>
                     <CiStar />
                 </div>
-
             </div>
 
-        
-        </div>
+        </Link>
     );
 };
 

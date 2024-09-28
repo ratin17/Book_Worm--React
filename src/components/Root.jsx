@@ -14,8 +14,9 @@ const Root = () => {
 
     const [books,setBooks]=React.useState([]);
     
-    function showToast(text){
-        toast.error(text, {
+    function showToast(text,type="info"){
+
+        const attributes={
             position: "top-right",
             autoClose: 2000,
             hideProgressBar: false,
@@ -23,7 +24,21 @@ const Root = () => {
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-        });
+        }
+
+        if(type==="error"){
+            toast.error(text,attributes);
+        }
+        else if(type==="warning"){
+            toast.error(text,attributes);
+        }
+        else if(type==="success"){
+            toast.success(text,attributes);
+        }
+        else{
+            toast.info(text,attributes);
+        }
+        
     }
 
     
@@ -38,7 +53,7 @@ const Root = () => {
     },[]);
 
     return (
-        
+
         <>
             <div className="w-5/6 mx-auto" >
                 <BookContext.Provider value={{books,showToast}} >

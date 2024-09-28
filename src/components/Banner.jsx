@@ -1,4 +1,5 @@
 // import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -6,7 +7,7 @@ const Banner = () => {
 
             <div className="flex flex-col gap-10 text-lg font-bold w-[45%] " >
                 <h2 className="text-5xl font-bold " >Discover an exceptional cooking class tailored for you!</h2>
-                <button className="px-5 py-3 w-1/2 rounded-lg bg-green-400 ">View The List</button>
+                <Link to="/listedBooks" className="px-5 py-3 w-1/2 rounded-lg bg-green-400 ">View The List</Link>
             </div>
 
             <img className=' h-[80vh] w-[55%] border-0 ' src="https://i.ibb.co.com/HprHPwd/Atomic-Habits.png" alt="" />

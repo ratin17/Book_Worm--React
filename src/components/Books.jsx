@@ -8,7 +8,7 @@ const Books = () => {
 
     return (
         <div>
-            <h2 className="text-4xl font-bold text-center " >Books</h2>
+            <h2 className="text-4xl font-bold text-center mb-10" >Books</h2>
 
             <div className=" grid grid-cols-1 md:grid-cols-3 gap-5 " >
                 {

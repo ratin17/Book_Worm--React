@@ -24,11 +24,11 @@ const BookDetail = () => {
         const wishlistBookIds=getListBykey('wishlist');
 
         if(readBookIds.includes(id)){
-            showToast('You have already read this book !');
+            showToast('You have already read this book !',"error");
         }
         else{
             setListBykey('readlist',id);
-            showToast('Added to Read List !');
+            showToast('Added to Read List !',"success");
             if(wishlistBookIds.includes(id)){
                 removeItemBykey('wishlist',id);
             }
@@ -41,14 +41,15 @@ const BookDetail = () => {
         const wishlistBookIds=getListBykey('wishlist');
 
         if(readBookIds.includes(id)){
-            showToast("You have already read this book , Can't add to Wishlist");
+            showToast("You have already read this book , Can't add to Wishlist","error");
         }
         else if(wishlistBookIds.includes(id)){
             console.log(id,'Alraedy exists in Wishlist');
+            showToast('Alraedy exists in Wishlist !',"error");
         }
         else{
             setListBykey('wishlist',id);
-            showToast('Added to  Wishlist!');
+            showToast('Added to  Wishlist!',"success");
         }
     }
 

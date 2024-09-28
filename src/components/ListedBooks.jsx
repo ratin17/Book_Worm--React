@@ -39,7 +39,7 @@ const ListedBooks = () => {
     function handleRemoveFromRead(id){
         id=String(id);
         removeItemBykey('readlist',id);
-        showToast("Removed from Read List !");
+        showToast("Removed from Read List !","warning");
 
         setToggle(!toggle);
     }
@@ -47,7 +47,7 @@ const ListedBooks = () => {
     function handleRemoveFromWishlist(id){
         id=String(id);
         removeItemBykey('wishlist',id);
-        showToast("Removed from Wishlist !");
+        showToast("Removed from Wishlist !","warning");
 
         setToggle(!toggle);
     }
@@ -67,10 +67,10 @@ const ListedBooks = () => {
                 value={selectedOption}
                 onChange={handleSelectChange}
                 >
-                    <option disabled value="">Sort By</option>
-                    <option value="rating">Rating</option>
-                    <option value="totalPages">Number of Pages</option>
-                    <option value="yearOfPublishing">Publishing Year</option>
+                    <option disabled value="" className=" bg-slate-300 " >Sort By</option>
+                    <option value="rating" className=" bg-green-200 " >Rating</option>
+                    <option value="totalPages" className=" bg-green-200 " >Number of Pages</option>
+                    <option value="yearOfPublishing" className=" bg-green-200 " >Publishing Year</option>
                 </select>
 
             </div>
