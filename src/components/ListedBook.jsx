@@ -17,7 +17,7 @@ const ListedBook = ({listedbook,remove}) => {
             <div className=" flex flex-col gap-2 flex-grow " >
                 <h2 className=" text-xl font-bold  " >{name}</h2>
                 <p>By : {author}</p>
-                <div className=" flex gap-2 items-center">
+                <div className=" flex flex-col md:flex-row gap-2 items-center">
                     <p className=" font-bold text-sm " >Tags</p>
                     {
                         tags.map((tag,idx)=>(
@@ -28,7 +28,7 @@ const ListedBook = ({listedbook,remove}) => {
                     <p>Year of Publishing : {yearOfPublishing}</p>
                 </div>
 
-                <div className=" flex gap-2 items-center " >
+                <div className=" flex flex-col md:flex-row gap-2 items-center " >
                     <IoPeopleOutline></IoPeopleOutline> 
                     <p>Publisher : {publisher} </p>
                     <Pages className=" ml-5 " ></Pages>
@@ -37,7 +37,7 @@ const ListedBook = ({listedbook,remove}) => {
 
                 <hr />
                 
-                <div className=" flex gap-3 " >
+                <div className=" flex flex-col md:flex-row gap-3 " >
                     <p className=" px-3 py-1 bg-blue-200 text-blue-600  rounded-full text-sm " > Category : {category} </p>
                     <p className=" px-3 py-1 bg-pink-200 text-pink-500 rounded-full text-sm " > Rating : {rating} </p>
                     <Link to={`/book/${id}`} className="px-3 py-1 bg-green-400 text-white rounded-full text-sm " >View Details</Link>

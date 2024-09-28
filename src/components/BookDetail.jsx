@@ -60,7 +60,7 @@ const BookDetail = () => {
     return (
         <div className=" grid grid-cols-1 md:grid-cols-2 gap-5 my-10 " >
 
-            <div className=" px-32 py-10 bg-slate-300 rounded-lg ">
+            <div className=" px-5 md:px-32 py-10 bg-slate-300 rounded-lg ">
 
                 <img src={image} alt={name} className="w-full h-[70vh] " />
 
@@ -80,7 +80,7 @@ const BookDetail = () => {
 
                 <p>Reveiw : {review}</p>
 
-                <div className="flex gap-1" >
+                <div className="flex gap-1 flex-col sm:flex-row" >
                     {
                         tags.map((tag,idx)=>(
                             <p key={idx} className=" p-2 rounded-2xl bg-gray-200 text-emerald-300 font-bold " >#{tag}</p>
