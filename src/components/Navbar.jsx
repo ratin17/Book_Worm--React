@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   function navStyle({ isActive}) {
@@ -47,7 +47,8 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Book Worm</a>
+        
+        <Link to="/" className="btn btn-ghost text-xl">Book Worm</Link>
       </div>
 
       <div className="navbar-center hidden lg:flex">

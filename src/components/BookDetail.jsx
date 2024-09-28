@@ -67,13 +67,13 @@ const BookDetail = () => {
             </div>
 
             <div className="flex flex-col gap-5 justify-between " >
-                <h2>{name}</h2>
-                <p>By : {author} </p>
+                <h2 className=" text-2xl font-bold " >{name}</h2>
+                <p className=" text-sm font-semibold " >By : {author} </p>
 
 
                 <div>
                     <hr />
-                    <p> {category} </p>
+                    <p className="my-3" > {category} </p>
                     <hr />
                 </div>
 
@@ -92,13 +92,13 @@ const BookDetail = () => {
                 
                 <div className=" grid grid-cols-2 " >
                     <p>Number of Pages : </p>
-                    <p>{totalPages}</p>
+                    <p className=" font-semibold " >{totalPages}</p>
                     <p>Publisher : </p>
-                    <p>{publisher}</p>
+                    <p className=" font-semibold ">{publisher}</p>
                     <p>Year of publishing : </p>
-                    <p>{yearOfPublishing}</p>
+                    <p className=" font-semibold ">{yearOfPublishing}</p>
                     <p>Rating : </p>
-                    <p>{rating}</p>
+                    <p className=" font-semibold ">{rating}</p>
                 </div>
 
                 <div className=" flex gap-5 " >
