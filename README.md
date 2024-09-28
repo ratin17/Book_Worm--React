@@ -1,8 +1,14 @@
-# React + Vite
+# Book Worm
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- You Can browse books in Home page
 
-Currently, two official plugins are available:
+- Can see details of the book clicking on it
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Can add to or remove from Wishlist
+
+- Can add to or remove from Read list
+
+- Can sort listed books in diffrent criterias
+
+- Charts are vailable to show number of pages of Books
+
