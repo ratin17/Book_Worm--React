@@ -4,7 +4,9 @@ import { CiLocationOn as Loc } from "react-icons/ci";
 import { IoPeopleOutline } from "react-icons/io5";
 import { PiBookOpenTextThin as Pages } from "react-icons/pi";
 import {Link} from 'react-router-dom';
-const ListedBook = ({listedbook}) => {
+
+
+const ListedBook = ({listedbook,remove}) => {
     const {image,id,author,name,rating,category,tags,yearOfPublishing,publisher,totalPages}=listedbook;
     return (
         <div className=" flex flex-col md:flex-row gap-5 p-5 border rounded-2xl mb-5 " >
@@ -38,7 +40,9 @@ const ListedBook = ({listedbook}) => {
                 <div className=" flex gap-3 " >
                     <p className=" px-3 py-1 bg-blue-200 text-blue-600  rounded-full text-sm " > Category : {category} </p>
                     <p className=" px-3 py-1 bg-pink-200 text-pink-500 rounded-full text-sm " > Rating : {rating} </p>
-                    <Link to={`/book/${id}`} className=" px-3 py-1 bg-green-400 text-white  rounded-full text-sm " > View Details </Link>
+                    <Link to={`/book/${id}`} className="px-3 py-1 bg-green-400 text-white rounded-full text-sm " >View Details</Link>
+                    
+                    <button onClick={()=>remove(id)} className="px-3 py-1 bg-rose-400 text-white  rounded-full text-sm"> Remove </button>
 
                 </div>
 
@@ -52,6 +56,7 @@ const ListedBook = ({listedbook}) => {
 
 ListedBook.propTypes = {
     listedbook: PropTypes.object,
+    remove: PropTypes.func,
 }
 
 export default ListedBook;

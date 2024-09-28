@@ -19,5 +19,14 @@ export function setListBykey(key,val){
 }
 
 
+export function removeItemBykey(key,val){
+
+    let list = getListBykey(key);;
+    list=list.filter((item)=>parseInt(item)!==parseInt(val));
+    localStorage.setItem(key,JSON.stringify(list));
+    
+}
+
+
 
 

@@ -1,6 +1,6 @@
 import { useState, useEffect ,useContext} from 'react';
 
-import { getListBykey } from '../../public/assets/utils';
+import { getListBykey, removeItemBykey } from '../../public/assets/utils';
 import { BookContext } from './Root';
 import ListedBook from './ListedBook';
 
@@ -9,7 +9,8 @@ const ListedBooks = () => {
     const [readbooks,setReadbooks]=useState([]);
     const [wishlistbooks,setWishlistbooks]=useState([]);
     const [selectedOption, setSelectedOption] = useState('');
-    const {books} = useContext(BookContext);
+    const {books,showToast} = useContext(BookContext);
+    const [toggle,setToggle] =useState(true)
 
     useEffect(()=>{
         if(books.length>0){
@@ -28,12 +29,29 @@ const ListedBooks = () => {
             setReadbooks(currentReadBooks);
             setWishlistbooks(currentWishlistBooks);
         }
-    },[selectedOption,books]);
+    },[selectedOption,books,toggle]);
 
 
     function handleSelectChange(event){
         setSelectedOption(event.target.value);
     }
+
+    function handleRemoveFromRead(id){
+        id=String(id);
+        removeItemBykey('readlist',id);
+        showToast("Removed from Read List !");
+
+        setToggle(!toggle);
+    }
+
+    function handleRemoveFromWishlist(id){
+        id=String(id);
+        removeItemBykey('wishlist',id);
+        showToast("Removed from Wishlist !");
+
+        setToggle(!toggle);
+    }
+    
 
 
     return (
@@ -66,6 +84,7 @@ const ListedBooks = () => {
                             <ListedBook
                                 key={listedbook.id}
                                 listedbook={listedbook}
+                                remove={handleRemoveFromRead}
                             ></ListedBook>
                         ))
                     }
@@ -78,6 +97,7 @@ const ListedBooks = () => {
                             <ListedBook
                                 key={listedbook.id}
                                 listedbook={listedbook}
+                                remove={handleRemoveFromWishlist}
                             ></ListedBook>
                         ))
                     }
