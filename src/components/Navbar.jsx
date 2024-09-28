@@ -55,7 +55,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
 
-      <div className="navbar-end gap-3">
+      <div className="navbar-end gap-3 hidden sm:flex ">
         <button className=" rounded-lg px-5 py-2 bg-green-500 text-white font-bold " >Sign In</button>
         <button className=" rounded-lg px-5 py-2 bg-cyan-400 text-white font-bold " >Sign Up</button>
       </div>
